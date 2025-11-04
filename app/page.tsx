@@ -14,13 +14,18 @@ export default function Dashboard() {
       setLoading(true);
       setError(null);
 
-      // Fetch overall sentiment
+      // Fetch overall sentiment - get the most recent row
       const { data: sentimentData, error: sentimentError } = await supabase
         .from('overall_sentiment')
         .select('*')
-        .single();
+        .order('last_updated', { ascending: false })
+        .limit(1)
+        .maybeSingle();
 
-      if (sentimentError) throw sentimentError;
+      if (sentimentError) {
+        console.error('Sentiment error:', sentimentError);
+        throw new Error(`Failed to fetch sentiment data: ${sentimentError.message}`);
+      }
 
       // Fetch reviews sorted by review_date descending (latest first)
       const { data: reviewsData, error: reviewsError } = await supabase
@@ -28,7 +33,10 @@ export default function Dashboard() {
         .select('*')
         .order('review_date', { ascending: false });
 
-      if (reviewsError) throw reviewsError;
+      if (reviewsError) {
+        console.error('Reviews error:', reviewsError);
+        throw new Error(`Failed to fetch reviews: ${reviewsError.message}`);
+      }
 
       setOverallSentiment(sentimentData);
       setReviews(reviewsData || []);
