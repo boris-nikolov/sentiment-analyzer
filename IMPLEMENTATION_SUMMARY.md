@@ -51,10 +51,10 @@ user-sentiment-analyzer/
 - **Branch**: main
 
 ### Supabase Project
-- **Project ID**: jqfqljxkicxmjjuioklr
-- **Region**: eu-west-1
-- **URL**: https://jqfqljxkicxmjjuioklr.supabase.co
-- **Anon Key**: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpxZnFsanhraWN4bWpqdWlva2xyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNzQyMTksImV4cCI6MjA3Nzg1MDIxOX0.DCm_eLWwDm6Obo2WKD3j2pdu6GmeB2d9kxsMJ7JNk3o
+- **Project ID**: hxdcjenoifzwrlajomtd
+- **URL**: https://hxdcjenoifzwrlajomtd.supabase.co
+- **Anon Key**: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh4ZGNqZW5vaWZ6d3JsYWpvbXRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjkzNjgsImV4cCI6MjA3Nzg0NTM2OH0.eOwG7yfMzzHAI9L6IK-Rb5dn9kX3SEmCrDrz3HPsvgU
+- **Dashboard**: https://supabase.com/dashboard/project/hxdcjenoifzwrlajomtd
 
 ### API Endpoint (Local Development)
 - **URL**: http://localhost:3000/api/reviews

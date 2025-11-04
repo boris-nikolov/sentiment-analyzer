@@ -141,10 +141,12 @@ This application is designed to be deployed on Vercel:
 
 ## 📝 Supabase Setup
 
-The Supabase project has been created with:
-- **Project ID**: jqfqljxkicxmjjuioklr
-- **Region**: eu-west-1
+The Supabase project configuration:
+- **Project ID**: hxdcjenoifzwrlajomtd
+- **Project URL**: https://hxdcjenoifzwrlajomtd.supabase.co
 - **Database**: PostgreSQL with two tables (reviews, overall_sentiment)
+
+To set up the database tables, run the SQL script in `supabase-setup.sql` in your Supabase SQL Editor.
 
 ## 🛠️ Tech Stack
 
