@@ -45,18 +45,20 @@ A Next.js application for real-time sentiment analysis and visualization of user
 **Request Body:**
 ```json
 {
-  "review_date": "2024-11-04T14:30:00Z",
+  "review_date": "2025-11-04T19:28:49.742+02:00",
   "user_email": "user@example.com",
   "review_text": "This product is amazing! I love how easy it is to use."
 }
 ```
+
+**Date Format:** ISO 8601 with timezone offset (e.g., `2025-11-04T19:28:49.742+02:00`)
 
 **Example cURL Request:**
 ```bash
 curl -X POST https://your-domain.vercel.app/api/reviews \
   -H "Content-Type: application/json" \
   -d '{
-    "review_date": "2024-11-04T14:30:00Z",
+    "review_date": "2025-11-04T19:28:49.742+02:00",
     "user_email": "user@example.com",
     "review_text": "This product is amazing! I love how easy it is to use."
   }'

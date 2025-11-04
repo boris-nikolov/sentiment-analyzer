@@ -23,11 +23,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate review_date format (ISO 8601)
-    const dateRegex = /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}(\.\d{3})?Z?)?$/;
+    // Validate review_date format (ISO 8601 with timezone offset)
+    // Accepts formats like: 2025-11-04T19:28:49.742+02:00 or 2024-01-15T10:30:00Z
+    const dateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?(Z|[+-]\d{2}:\d{2})$/;
     if (!dateRegex.test(review_date)) {
       return NextResponse.json(
-        { error: 'Invalid date format. Use ISO 8601 format (e.g., 2024-01-15T10:30:00Z)' },
+        { error: 'Invalid date format. Use ISO 8601 format (e.g., 2025-11-04T19:28:49.742+02:00)' },
+        { status: 400 }
+      );
+    }
+
+    // Validate that the date is actually parseable
+    const parsedDate = new Date(review_date);
+    if (isNaN(parsedDate.getTime())) {
+      return NextResponse.json(
+        { error: 'Invalid date value. Date could not be parsed.' },
         { status: 400 }
       );
     }

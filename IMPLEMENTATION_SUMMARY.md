@@ -66,11 +66,13 @@ user-sentiment-analyzer/
 
 ## 📝 Example API Request
 
+**Date Format:** ISO 8601 with timezone offset (e.g., `2025-11-04T19:28:49.742+02:00`)
+
 ```bash
 curl -X POST http://localhost:3000/api/reviews \
   -H "Content-Type: application/json" \
   -d '{
-    "review_date": "2024-11-04T14:30:00Z",
+    "review_date": "2025-11-04T19:28:49.742+02:00",
     "user_email": "customer@example.com",
     "review_text": "This product exceeded my expectations! The quality is outstanding."
   }'
@@ -81,7 +83,7 @@ curl -X POST http://localhost:3000/api/reviews \
 The n8n workflow needs to:
 
 1. **Receive webhook data** from `/api/reviews` endpoint with:
-   - `review_date` (ISO 8601 timestamp)
+   - `review_date` (ISO 8601 timestamp with timezone, e.g., `2025-11-04T19:28:49.742+02:00`)
    - `user_email` (string)
    - `review_text` (string)
 
